@@ -21,17 +21,27 @@ pipeline {
             }
         }
 
-        stage('terraform plan...') {
+        stage('Terraform plan') {
             when{
-                branch "dev"
+                branch "Dev"
             }
             steps {
-                dir('/home/jrivas/proyects/ci-cd-ec2-terraform') {
-                    sh 'terraform plan'
-                }
+                 sh 'terraform plan'
+                                
+            }
+        }
+
+        stage('terraform apply...') {
+            when{
+                branch 'main'
+            }
+            steps {
+                
+                sh 'terraform apply --auto-approve'
+                
                 
             }
-    }
+        }        
 
 
 
