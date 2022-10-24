@@ -55,6 +55,23 @@ pipeline {
             }
         }    
 
+
+        stage('5 minutes Terraform destoy') {
+            when{
+                branch "main"
+            }
+            steps {
+
+                powershell 'sleep 300'
+
+                dir('C:/Dev/Code/Challenge/IaC-DevOps-Challenge') {
+                powershell 'terraform apply --auto-approve'
+                }
+                
+                       
+            }
+        }
+
         
     }
 
