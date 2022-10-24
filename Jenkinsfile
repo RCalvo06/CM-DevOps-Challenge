@@ -20,34 +20,40 @@ pipeline {
                 checkout scm
             }
         }
-       
-        stage('Terraform init') {
+
+        /*stage('Terraform init') {
             steps {
-                sh 'terraform init'
+                dir('C:/Dev/Code/Challenge/IaC-DevOps-Challenge') {
+                powershell 'terraform init'
+                }
             }
-        }
+        }*/
 
         stage('Terraform plan') {
-            when{
+           /* when{
                 branch "Dev"
-            }
+            } */
             steps {
-                 sh 'terraform plan'
-                                
+                dir('C:/Dev/Code/Challenge/IaC-DevOps-Challenge') {
+                powershell 'terraform plan'
+                echo "final"   
+                }
+                       
             }
         }
 
-        stage('terraform apply...') {
+        stage('Terraform apply') {
             when{
-                branch 'main'
+                branch "main"
             }
             steps {
+                dir('C:/Dev/Code/Challenge/IaC-DevOps-Challenge') {
+                powershell 'terraform apply --auto-approve'
+                }
                 
-                sh 'terraform apply --auto-approve'
-                
-                
+                       
             }
-        }        
+        }    
 
         
     }
