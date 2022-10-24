@@ -28,26 +28,24 @@ pipeline {
         }
 
         stage('Terraform plan') {
-            when{
-                branch "Dev"
-            }
-            steps {
-                sh 'terraform plan'
-                                
-            }
+        when{
+            branch "Dev"
+        }
+        steps {
+            sh 'terraform plan'
+                       
+        }
         }
 
-        stage('terraform apply...') {
-            when{
-                branch 'main'
-            }
-            steps {
-                
-                sh 'terraform apply --auto-approve'
-                
-                
-            }
-        }        
+        stage('Terraform apply') {
+        when{
+            branch 'main'
+        }
+        steps {
+            sh 'terraform apply --auto-approve'
+                       
+        }
+        }   
 
         
     }
