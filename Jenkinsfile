@@ -43,7 +43,7 @@ pipeline {
 
         stage('Terraform apply') {
             when{
-                branch "Main"
+                branch "main"
             }
             steps {
                 dir('C:/Dev/Code/Challenge/IaC-DevOps-Challenge') {
