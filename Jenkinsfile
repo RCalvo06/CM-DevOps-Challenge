@@ -20,6 +20,12 @@ pipeline {
                 checkout scm()
             }
         }
+       
+        stage('Terraform init') {
+            steps {
+                sh 'terraform init'
+            }
+        }
 
         stage('Terraform plan') {
             when{
