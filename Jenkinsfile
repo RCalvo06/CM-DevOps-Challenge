@@ -21,11 +21,11 @@ pipeline {
             }
         }
 
-        stage('Terraform init') {
+       /* stage('Terraform init') {
             steps {
                 sh 'terraform init'
             }
-        }
+        }*/
 
         stage('Terraform plan') {
         when{
