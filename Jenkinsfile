@@ -21,18 +21,18 @@ pipeline {
             }
         }
 
-        stage('Terraform init') {
+        /*stage('Terraform init') {
             steps {
                 dir('C:/Dev/Code/Challenge/IaC-DevOps-Challenge') {
                 sh 'terraform init'
                 }
             }
-        }
+        }*/
 
         stage('Terraform plan') {
-            when{
+           /* when{
                 branch "Dev"
-            }
+            } */
             steps {
                 dir('C:/Dev/Code/Challenge/IaC-DevOps-Challenge') {
                 sh 'terraform plan'

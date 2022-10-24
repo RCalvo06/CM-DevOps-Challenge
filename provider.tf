@@ -2,6 +2,6 @@
 
 provider "aws" {
 
-    
+
 
 }
