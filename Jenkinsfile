@@ -21,7 +21,7 @@ pipeline {
             }
         }
 
-       /* stage('Terraform init') {
+        stage('Terraform init') {
             steps {
                 sh 'terraform init'
             }
@@ -45,7 +45,7 @@ pipeline {
             sh 'terraform apply --auto-approve'
                        
         }
-        } */   
+        }    
 
         
     }
