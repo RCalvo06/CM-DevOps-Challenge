@@ -23,28 +23,35 @@ pipeline {
 
         stage('Terraform init') {
             steps {
+                dir('C:/Dev/Code/Challenge/IaC-DevOps-Challenge') {
                 sh 'terraform init'
+                }
             }
         }
 
         stage('Terraform plan') {
-        when{
-            branch "Dev"
-        }
-        steps {
-            sh 'terraform plan'
+            when{
+                branch "Dev"
+            }
+            steps {
+                dir('C:/Dev/Code/Challenge/IaC-DevOps-Challenge') {
+                sh 'terraform plan'
+                }
                        
-        }
+            }
         }
 
         stage('Terraform apply') {
-        when{
-            branch 'main'
-        }
-        steps {
-            sh 'terraform apply --auto-approve'
+            when{
+                branch "Main"
+            }
+            steps {
+                dir('C:/Dev/Code/Challenge/IaC-DevOps-Challenge') {
+                sh 'terraform apply --auto-approve'
+                }
+                
                        
-        }
+            }
         }    
 
         
