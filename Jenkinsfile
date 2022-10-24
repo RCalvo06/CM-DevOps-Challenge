@@ -36,6 +36,7 @@ pipeline {
             steps {
                 dir('C:/Dev/Code/Challenge/IaC-DevOps-Challenge') {
                 powershell 'terraform plan'
+                echo "final"   
                 }
                        
             }
