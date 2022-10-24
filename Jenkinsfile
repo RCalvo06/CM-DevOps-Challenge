@@ -25,7 +25,7 @@ pipeline {
             steps {
                 sh 'terraform init'
             }
-        }*/
+        }
 
         stage('Terraform plan') {
         when{
@@ -45,7 +45,7 @@ pipeline {
             sh 'terraform apply --auto-approve'
                        
         }
-        }   
+        } */   
 
         
     }
