@@ -21,12 +21,18 @@ pipeline {
             }
         }
 
+        stage('Terraform init') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+
         stage('Terraform plan') {
             when{
                 branch "Dev"
             }
             steps {
-                 sh 'terraform plan'
+                sh 'terraform plan'
                                 
             }
         }
