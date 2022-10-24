@@ -24,7 +24,7 @@ pipeline {
         /*stage('Terraform init') {
             steps {
                 dir('C:/Dev/Code/Challenge/IaC-DevOps-Challenge') {
-                sh 'terraform init'
+                powershell 'terraform init'
                 }
             }
         }*/
@@ -35,7 +35,7 @@ pipeline {
             } */
             steps {
                 dir('C:/Dev/Code/Challenge/IaC-DevOps-Challenge') {
-                sh 'terraform plan'
+                powershell 'terraform plan'
                 }
                        
             }
@@ -47,7 +47,7 @@ pipeline {
             }
             steps {
                 dir('C:/Dev/Code/Challenge/IaC-DevOps-Challenge') {
-                sh 'terraform apply --auto-approve'
+                powershell 'terraform apply --auto-approve'
                 }
                 
                        
