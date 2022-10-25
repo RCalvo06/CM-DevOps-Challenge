@@ -56,7 +56,7 @@ pipeline {
         }    
 
 
-        stage('5 minutes Terraform destoy') {
+        stage('5 minutes Terraform destroy') {
             when{
                 branch "main"
             }
@@ -65,7 +65,7 @@ pipeline {
                 powershell 'sleep 300'
 
                 dir('C:/Dev/Code/Challenge/IaC-DevOps-Challenge') {
-                powershell 'terraform apply --auto-approve'
+                powershell 'terraform destroy --auto-approve'
                 }
                 
                        
