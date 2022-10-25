@@ -4,7 +4,7 @@ resource "aws_instance" "my-webserver" {
   ami             = var.ami_id
   instance_type   = var.instance-type
   key_name        = var.key-name
-  user_data       = file("setup.nginx.sh")
+  user_data       = file("setup-nginx.sh")
   security_groups = [aws_security_group.web_traffic2.name]
 
 
