@@ -23,7 +23,7 @@ pipeline {
 
         /*stage('Terraform init') {
             steps {
-                dir('C:/Dev/Code/Challenge/IaC-DevOps-Challenge') {
+                dir('G:/Dev/Github/IaC-DevOps-Challenge') {
                 powershell 'terraform init'
                 }
             }
@@ -34,7 +34,7 @@ pipeline {
                 branch "Dev"
             } */
             steps {
-                dir('C:/Dev/Code/Challenge/IaC-DevOps-Challenge') {
+                dir('G:/Dev/Github/IaC-DevOps-Challenge') {
                 powershell 'terraform plan'
                 echo "final"   
                 }
@@ -47,7 +47,7 @@ pipeline {
                 branch "main"
             }
             steps {
-                dir('C:/Dev/Code/Challenge/IaC-DevOps-Challenge') {
+                dir('G:/Dev/Github/IaC-DevOps-Challenge') {
                 powershell 'terraform apply --auto-approve'
                 }
                 
@@ -64,7 +64,7 @@ pipeline {
 
                 powershell 'sleep 300'
 
-                dir('C:/Dev/Code/Challenge/IaC-DevOps-Challenge') {
+                dir('G:/Dev/Github/IaC-DevOps-Challenge') {
                 powershell 'terraform destroy --auto-approve'
                 }
                 
