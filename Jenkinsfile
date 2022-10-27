@@ -7,7 +7,7 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
         AWS_REGION = credentials('AWS_REGION')
     }
-
+ /*Test file */
     stages{
         stage('Cleaning Workspace') {
             steps {
